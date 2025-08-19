@@ -1,0 +1,51 @@
+import wpilib
+from commands2 import TimedCommandRobot, button
+import ledsubsystem
+import joystickcontrol
+import setledgreen
+
+
+
+class MyRobot(TimedCommandRobot):
+   def robotInit(self):
+       """
+       This function is called upon program startup and
+       should be used for any initialization code.
+       """
+
+       self.controller = wpilib.Joystick(0)
+       self.led = ledsubsystem.LEDSubsystem()
+       self.led.setDefaultCommand(joystickcontrol.JoyStickControl(self.led, self.controller) )
+       button.JoystickButton(self.controller,1).whileTrue( setledgreen.SetLEDGreen(self.led)  )
+
+       print ("Robot Initialization (robotInit) Completed ")
+
+
+   def autonomousInit(self):
+       """This function is run once each time the robot enters autonomous mode."""
+       print ("Autonomous Initialization (autonomousInit) Completed ")
+
+
+   def autonomousPeriodic(self):
+       """This function is called periodically during autonomous."""
+
+
+   def teleopInit(self):
+       """This function is called once each time the robot enters teleoperated mode."""
+       print ("TeleOpInit Initialization (teleopInit) Completed ")
+
+
+   def teleopPeriodic(self):
+       """This function is called periodically during teleoperated mode."""
+       Xaxis = self.controller.getRawAxis(0)
+       Yaxis = self.controller.getRawAxis(1)
+       print(f"Joystick: Forward Motion Axis: {Yaxis:5.2f}  Turning Motion Axis: {Xaxis:5.2f} ")
+
+
+   def testInit(self):
+       """This function is called once each time the robot enters test mode."""
+       print ("TestInit Initialization (testInit) Completed ")
+
+
+   def testPeriodic(self):
+       """This function is called periodically during test mode."""

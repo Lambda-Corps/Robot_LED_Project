@@ -3,6 +3,7 @@ from commands2 import TimedCommandRobot, button
 import ledsubsystem
 import joystickcontrol
 import setledgreen
+import setledred
 
 
 
@@ -17,6 +18,7 @@ class MyRobot(TimedCommandRobot):
        self.led = ledsubsystem.LEDSubsystem()
        self.led.setDefaultCommand(joystickcontrol.JoyStickControl(self.led, self.controller) )
        button.JoystickButton(self.controller,1).whileTrue( setledgreen.SetLEDGreen(self.led)  )
+       button.JoystickButton(self.controller,2).whileTrue( setledred.SetLEDRed(self.led)  )
 
        print ("Robot Initialization (robotInit) Completed ")
 

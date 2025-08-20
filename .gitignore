@@ -2,6 +2,7 @@
 ctre_sim/
 
 # Ignore specific GUI elements
+simgui*.json
 simgui*
 
 # Ignore networktables JSON file

@@ -28,7 +28,11 @@
     },
     "###Joysticks": {
       "Collapsed": "0",
+<<<<<<< Updated upstream
       "Pos": "281,261",
+=======
+      "Pos": "281,296",
+>>>>>>> Stashed changes
       "Size": "796,155"
     },
     "###NetworkTables": {
@@ -38,7 +42,7 @@
     },
     "###NetworkTables Info": {
       "Collapsed": "0",
-      "Pos": "250,130",
+      "Pos": "379,172",
       "Size": "750,145"
     },
     "###Other Devices": {

@@ -207,3 +207,4 @@ cython_debug/
 # Mac filesystem artifacts
 .DS_Store
 .DS_Store
+.DS_Store

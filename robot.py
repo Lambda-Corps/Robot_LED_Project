@@ -4,6 +4,7 @@ import ledsubsystem
 import joystickcontrol
 import setledgreen
 import setledred
+import railgunsubsystem
 
 
 
@@ -19,6 +20,9 @@ class MyRobot(TimedCommandRobot):
        self.led.setDefaultCommand(joystickcontrol.JoyStickControl(self.led, self.controller) )
        button.JoystickButton(self.controller,1).whileTrue( setledgreen.SetLEDGreen(self.led)  )
        button.JoystickButton(self.controller,2).whileTrue( setledred.SetLEDRed(self.led)  )
+
+       self.rail = railgunsubsystem.RailGunSubsystem()
+       button.JoystickButton(self.controller,3).onTrue( railgunsubsystem.FireRailGun(self.rail))
 
        print ("Robot Initialization (robotInit) Completed ")
 

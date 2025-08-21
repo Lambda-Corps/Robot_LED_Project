@@ -1,3 +1,10 @@
+#  Instructions on how to get rid of Macbook "".DS_Store"
+#  https://betterstack.com/community/questions/how-to-remove-ds-store-files-from-git-repo/
+#
+# Mac filesystem artifacts
+.DS_Store
+
+
 # Ignore all the CTRE Simulation artifacts
 ctre_sim/
 

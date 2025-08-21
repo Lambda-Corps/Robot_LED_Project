@@ -5,6 +5,7 @@ import joystickcontrol
 import setledgreen
 import setledred
 import lasercannonsubsystem
+import railgunsubsystem
 
 
 
@@ -23,6 +24,8 @@ class MyRobot(TimedCommandRobot):
 
        self.laser = lasercannonsubsystem.LaserCannonSubsystem()
        button.JoystickButton(self.controller,3).onTrue(lasercannonsubsystem.FireLaserCannon(self.laser))
+       self.rail = railgunsubsystem.RailGunSubsystem()
+       button.JoystickButton(self.controller,4).onTrue( railgunsubsystem.FireRailGun(self.rail))
 
        print ("Robot Initialization (robotInit) Completed ")
 
